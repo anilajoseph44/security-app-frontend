@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:security_app/pages/addsecurity.dart';
+import 'package:security_app/pages/viewsecurity.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,7 +14,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.blueAccent,),
+        appBar: AppBar(backgroundColor: Colors.blueAccent,
+        actions: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blueAccent,
+              foregroundColor: Colors.white
+            ),
+              onPressed: ()
+              {
+
+                Navigator.pop(context);
+
+              }, child: Text("Logout"))
+        ],),
         body: Container(padding: EdgeInsets.all(90),
           child: Column(
             children: [
@@ -47,6 +61,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                     onPressed: ()
                     {
+                      
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ViewSecurity()));
 
                     },
                     child: Text("View all securities")),
