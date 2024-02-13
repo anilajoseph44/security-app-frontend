@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:security_app/pages/addsecurity.dart';
 import 'package:security_app/pages/viewsecurity.dart';
+import 'package:security_app/pages/viewvisitors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -80,6 +81,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                     onPressed: ()
                     {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ViewVisitors()));
 
                     },
                     child: Text("View all visitors")),
